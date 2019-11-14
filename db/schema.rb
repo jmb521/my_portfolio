@@ -42,8 +42,13 @@ ActiveRecord::Schema.define(version: 2019_11_13_045958) do
   end
 
   create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.string "content_format"
+    t.string "content"
+    t.bigint "admin_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_user_id"], name: "index_blogs_on_admin_user_id"
   end
 
 end
