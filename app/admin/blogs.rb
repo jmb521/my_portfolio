@@ -7,7 +7,16 @@ ActiveAdmin.register Blog do
     def create
       # binding.pry
       @blog = Blog.new(:title => params[:blog][:title], :content_format => params[:blog][:content_format], :content => params[:blog][:content], :admin_user => current_admin_user)
-      if @blog && @blog.save
+      if @blog.save
+        params[:blog][:tag_ids].each do |tag|
+          if tag != ""
+            binding.pry
+            @tag = Tag.find(tag)
+            @blog.blog_tags.create(tag_id: @tag.id)
+
+            @blog.save
+          end
+        end
         redirect_to(admin_blogs_path)
       end
     end
