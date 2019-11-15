@@ -1,6 +1,6 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
-
+  # has_many :blogs
   index do
     selectable_column
     id_column
