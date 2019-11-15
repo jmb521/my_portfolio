@@ -10,7 +10,7 @@ ActiveAdmin.register Blog do
       if @blog.save
         params[:blog][:tag_ids].each do |tag|
           if tag != ""
-            binding.pry
+            
             @tag = Tag.find(tag)
             @blog.blog_tags.create(tag_id: @tag.id)
 
