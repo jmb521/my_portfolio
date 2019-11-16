@@ -5,7 +5,7 @@ ActiveAdmin.register Blog do
 
   controller do
     def create
-      # binding.pry
+      
       @blog = Blog.new(:title => params[:blog][:title], :content_format => params[:blog][:content_format], :content => params[:blog][:content], :admin_user => current_admin_user)
       if @blog.save
         params[:blog][:tag_ids].each do |tag|
