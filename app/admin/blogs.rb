@@ -11,15 +11,18 @@ ActiveAdmin.register Blog do
         params[:blog][:tag_ids].each do |tag|
           if tag != ""
             
-            @tag = Tag.find(tag)
-            @blog.blog_tags.create(tag_id: @tag.id)
-
+            # @tag = Tag.find(tag)
+            # @blog.blog_tags.create(tag_id: @tag.id)
+            @blog.tags << Tag.find(tag)
             @blog.save
           end
         end
         redirect_to(admin_blogs_path)
+        
       end
     end
+
+  
   end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
