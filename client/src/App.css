@@ -1,10 +1,7 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-}
+
+
+
 
 .App-header {
   background-color: #282c34;
@@ -19,4 +16,13 @@
 
 .App-link {
   color: #09d3ac;
+}
+pre {
+  background-color: black;
+  color: #3d87ff;
+  display: inline-block;
+ 
+}
+div.blog {
+  width: 500px;
 }

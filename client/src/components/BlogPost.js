@@ -1,15 +1,16 @@
 import React from 'react'
+import ReactHtmlParser from 'react-html-parser';
 
 
 let BlogPost = (props) => {
-    console.log("props", props)
+    console.log("props.posts", props.posts)
     let blogPosts = props.posts.map(post => {
         return(
 
-        <div class="blog">
+        <div className="blog">
             {post.title}
             <br />
-            {post.content}
+            { ReactHtmlParser(post.content) }
             <br />
             <hr />
         </div>

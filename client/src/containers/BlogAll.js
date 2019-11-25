@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import BlogPost from '../components/BlogPost.js'
+import BlogList from '../components/BlogListDetails.js'
+
 class BlogAll extends Component {
     constructor(props) {
         super(props)
@@ -13,17 +14,22 @@ class BlogAll extends Component {
             fetch("http://localhost:3001/blogs")
             .then(response => response.json())
             .then(response => this.setState({posts: response}))
+            
         }
+
+    
 
         componentDidMount() {
             this.fetchBlogs()
             
         }
     render() {
-        console.log("state", this.state)
+        let List = this.state.posts.map(post => {
+            return <BlogList post={post} />
+        })
         return (
           <div>
-              <BlogPost posts={this.state.posts} />
+             {List}
           </div>
         )
       }
