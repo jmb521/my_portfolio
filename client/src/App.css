@@ -36,3 +36,7 @@ div.tagline p {
 div.tagline {
   text-align: center;
 }
+
+h3.skills {
+  margin-left: 25px;
+}

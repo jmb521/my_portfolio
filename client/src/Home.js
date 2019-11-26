@@ -14,6 +14,7 @@ import Avatar from './components/Avatar.js'
 import TagLine from './components/TagLine.js'
 import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import FolderOpenTwoToneIcon from '@material-ui/icons/FolderOpenTwoTone';
+import Skills from './components/Skills.js'
 const drawerWidth = 200;
 
 const useStyles = makeStyles(theme => ({
@@ -64,14 +65,15 @@ export default function ClippedDrawer() {
         <Avatar />
         <TagLine />
         <List>
-          {['Blog Posts', 'Resources'].map((text, index) => (
-            <ListItem button key={text}>
+          {['Blog Posts', 'Resources', 'Email'].map((text, index) => (
+              <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <DescriptionTwoToneIcon /> : <FolderOpenTwoToneIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
+        <Skills />
         
       </Drawer>
       <main className={classes.content}>

@@ -3,6 +3,7 @@ import React from 'react'
 let Skills = () => {
     return(
         <div>
+            <h3 className="skills">Skills: </h3>
             <ul>
                 <li>Ruby</li>
                 <li>Rails</li>
