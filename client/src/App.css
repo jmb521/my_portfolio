@@ -26,3 +26,13 @@ pre {
 div.blog {
   width: 500px;
 }
+
+.avatar {
+  margin: 0 auto;
+}
+div.tagline p {
+  font-weight: bold;
+}
+div.tagline {
+  text-align: center;
+}
