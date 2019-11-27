@@ -10,19 +10,7 @@ class BlogAll extends Component {
         }
     }
 
-        fetchBlogs = () => {
-            fetch("http://localhost:3001/blogs")
-            .then(response => response.json())
-            .then(response => this.setState({posts: response}))
-            
-        }
-
-    
-
-        componentDidMount() {
-            this.fetchBlogs()
-            
-        }
+      
     render() {
         let List = this.state.posts.map(post => {
             return <BlogList post={post} />
