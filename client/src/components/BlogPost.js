@@ -1,23 +1,22 @@
 import React from 'react'
 import ReactHtmlParser from 'react-html-parser';
-
+import Paper from '@material-ui/core/Paper';
 
 let BlogPost = (props) => {
-    console.log("props.posts", props.posts)
-    let blogPosts = props.posts.map(post => {
-        return(
-
-        <div className="blog">
-            {post.title}
-            <br />
-            { ReactHtmlParser(post.content) }
-            <br />
-            <hr />
-        </div>
-        )
-    })
+    console.log("blogpost", props.title)
     return(
-        <div>{blogPosts}</div>
-    )
-}
-export default BlogPost
+        
+        <Paper>
+        <div className="blog">
+            {props.title}
+            <br />
+            <br />
+            { ReactHtmlParser(props.content) }
+        </div>
+            </Paper>
+        
+        )
+    }
+    
+    
+    export default BlogPost

@@ -16,7 +16,7 @@ import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import FolderOpenTwoToneIcon from '@material-ui/icons/FolderOpenTwoTone';
 import Skills from './Skills.js'
 import Paper from '@material-ui/core/Paper';
-const drawerWidth = 200;
+const drawerWidth = 250;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,13 +48,13 @@ let LeftDrawer = () => {
     return(
         <div className={classes.root}>
         <CssBaseline />
-        <AppBar position="fixed" className={classes.appBar}>
+        {/* <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
               Jennifer Pazos
             </Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <Drawer
           className={classes.drawer}
           variant="permanent"
@@ -62,8 +62,10 @@ let LeftDrawer = () => {
             paper: classes.drawerPaper,
           }}
         >
+        
           <div className={classes.toolbar} />
-          <br />
+          
+           
           <Avatar />
           <TagLine />
           <List>

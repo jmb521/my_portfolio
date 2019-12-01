@@ -1,7 +1,7 @@
 function addNewPosts(posts){
-    
+    console.log("posts from within the action", posts)
     return {
-        type: "ADDPOST",
+        type: "ADDPOSTS",
         posts
     }
 }
