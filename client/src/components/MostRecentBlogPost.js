@@ -1,18 +1,27 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-class MostRecent extends Component {
-	render() {
+import React from 'react'
+import BlogPost from './BlogPost.js'
+// class MostRecent extends Component {
+    let MostRecent = (props) => {
+	
+        console.log("props from most recent", props.lastPost.title)
         return (
-          
+          <div>
+            <BlogPost title={props.lastPost.title} content={props.lastPost.content}/>
+          </div>
         )
-      }
-}
-
-let mapStateToProps = (state) => {
-    return {
-        posts: state
+      
     }
-}
+    
+    
+export default MostRecent
 
-export default connect(mapStateToProps) (MostRecent)
+MostRecent.defaultProps = {
+  lastPost:
+    {
+      title: "", 
+      content: ""
+    }
+
+}
+// export default connect(mapStateToProps) (MostRecent)
 

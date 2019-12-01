@@ -18,14 +18,18 @@
   color: #09d3ac;
 }
 pre {
-  background-color: black;
-  color: #3d87ff;
+  background-color: #292a2d;
+  color: #f7fc00;
   display: inline-block;
- 
+  width: auto;
+  border-radius: 5px;
+  padding: 15px;
 }
 div.blog {
-  width: 500px;
+  /* width: 500px; */
+  margin-left: 270px;
 }
+
 
 .avatar {
   margin: 0 auto;
