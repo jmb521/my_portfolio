@@ -44,3 +44,12 @@ div.tagline {
 h3.skills {
   margin-left: 25px;
 }
+
+a.nav{
+  text-decoration: none;
+  color: black;
+}
+.rightside {
+ margin-left: 250px;
+ padding-left: 75px;
+}
