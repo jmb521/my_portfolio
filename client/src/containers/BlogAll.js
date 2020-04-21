@@ -1,29 +1,32 @@
 import React, {Component} from 'react'
-import BlogList from '../components/BlogListDetails.js'
-
+import {connect} from 'react-redux'
+// import BlogList from '../components/BlogListDetails.js'
+import BlogTitleAndDate from '../components/BlogTitleAndDate.js'
+import Paper from '@material-ui/core/Paper';
 class BlogAll extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            posts: []
-        }
-    }
-
-      
+  
+   
     render() {
-        let List = this.state.posts.map(post => {
-            return <BlogList post={post} />
+       
+        let individualPost = this.props.posts.map(post => {
+            return(<BlogTitleAndDate post={post} key={post.id}/>)
         })
         return (
-          <div>
-             {List}
+        <Paper>
+          <div className="rightside">
+             {individualPost}
           </div>
+        </Paper>
         )
       }
 }
 
-export default BlogAll
+const mapStateToProps = (state) => {
+    console.log("state within the mapStateToProps in BlogAll", state)
+    return {posts: state.posts}
+}
+
+export default connect(mapStateToProps, null, null)(BlogAll)
 
 
 

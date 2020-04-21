@@ -1,21 +1,30 @@
 import React from 'react'
 import ReactHtmlParser from 'react-html-parser';
-import Paper from '@material-ui/core/Paper';
+
 
 let BlogPost = (props) => {
-    console.log("blogpost", props.title)
+    console.log("blogpost", props)
     return(
         
-        <Paper>
-        <div className="blog">
+        
+        <div>
             {props.title}
             <br />
             <br />
             { ReactHtmlParser(props.content) }
         </div>
-            </Paper>
+        
         
         )
+    }
+    BlogPost.defaultProps = {
+        post:
+            {
+                title: "Placeholder", 
+                content: "Placeholder Content"
+            }
+            
+        
     }
     
     

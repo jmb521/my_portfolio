@@ -1,31 +1,23 @@
 import React, {Component} from 'react';
-import LeftDrawer from './components/LeftDrawer.js'
-import addNewPosts from './actions/BlogActions.js'
+
 import {connect} from 'react-redux'
 import MostRecent from './components/MostRecentBlogPost.js'
-class Home extends Component {
-  
+import Paper from '@material-ui/core/Paper';
 
+class Home extends Component {
     
-    fetchBlogs = () => {
-        fetch("http://localhost:3001/blogs")
-        .then(response => response.json())
-        .then(response => this.props.addNewPosts(response))
-    }
-    
-    componentDidMount() {
-        this.fetchBlogs()
-        
-    }
+   
     
 	render() {
+        console.log("this.props inside home", this.props)
        
         return (
+            <Paper>
+            <div className="rightside">
             
-            <div>
-            <LeftDrawer />
             <MostRecent lastPost={this.props.posts[this.props.posts.length-1]}/>
-            </div>    
+            </div> 
+            </Paper>   
         );
     }
 }
@@ -46,4 +38,4 @@ Home.defaultProps = {
     ]
 }
 
-export default connect(mapStateToProps, {addNewPosts}) (Home)
+export default connect(mapStateToProps) (Home)

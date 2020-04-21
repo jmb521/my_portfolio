@@ -7,11 +7,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     '& > *': {
       margin: theme.spacing(1),
+      
     },
   },
   bigAvatar: {
-    width: 80,
-    height: 80,
+    width: 120,
+    height: 120,
     margin: "auto",
   },
 }));

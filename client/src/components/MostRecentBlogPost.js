@@ -1,6 +1,6 @@
 import React from 'react'
 import BlogPost from './BlogPost.js'
-// class MostRecent extends Component {
+
     let MostRecent = (props) => {
 	
         console.log("props from most recent", props.lastPost.title)
@@ -23,5 +23,5 @@ MostRecent.defaultProps = {
     }
 
 }
-// export default connect(mapStateToProps) (MostRecent)
+
 
